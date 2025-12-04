@@ -90,7 +90,7 @@ const Workflows = () => {
                                 <div className="flex items-center justify-between" style={{ marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
                                     <span style={{ fontSize: '1.5rem', fontWeight: 700 }}>${workflow.price}</span>
                                     <a
-                                        href={`https://wa.me/923145859709?text=I%20want%20to%20buy%20workflow:%20${workflow.title}`}
+                                        href={`https://wa.me/923145958709?text=I%20want%20to%20buy%20workflow:%20${workflow.title}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn btn-primary"

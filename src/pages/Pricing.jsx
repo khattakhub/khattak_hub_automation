@@ -96,7 +96,7 @@ const Pricing = () => {
                             </div>
 
                             <a
-                                href={`https://wa.me/923145859709?text=I%20want%20to%20buy%20${tier.name}%20package`}
+                                href={`https://wa.me/923145958709?text=I%20want%20to%20buy%20${tier.name}%20package`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`btn w-full ${tier.popular ? 'btn-primary' : 'btn-outline'}`}

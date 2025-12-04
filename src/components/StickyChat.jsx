@@ -37,7 +37,7 @@ const StickyChat = () => {
 
                     <div style={{ padding: '0.75rem', borderTop: '1px solid var(--border)', display: 'flex', gap: '0.5rem' }}>
                         <a
-                            href="https://wa.me/923145859709"
+                            href="https://wa.me/923145958709"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary w-full"

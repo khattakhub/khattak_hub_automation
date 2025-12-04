@@ -43,7 +43,7 @@ const Home = () => {
 
                         <div className="flex gap-4" style={{ flexWrap: 'wrap' }}>
                             <a
-                                href="https://wa.me/923145859709?text=I%20want%20to%20buy%20automation"
+                                href="https://wa.me/923145958709?text=I%20want%20to%20buy%20automation"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-primary"
