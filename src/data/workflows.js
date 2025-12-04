@@ -1,0 +1,47 @@
+export const workflows = [
+    {
+        id: 'wf_001',
+        title: 'WhatsApp Order Intake',
+        description: 'Automatically capture orders from WhatsApp messages and save them to Google Sheets.',
+        price: 29,
+        category: 'Sales',
+        icon: 'MessageCircle',
+        features: ['WhatsApp Webhook', 'Google Sheets Integration', 'Auto-reply'],
+    },
+    {
+        id: 'wf_002',
+        title: 'Abandoned Cart Recovery',
+        description: 'Send automated reminders to customers who started an order but didn\'t finish.',
+        price: 49,
+        category: 'Marketing',
+        icon: 'ShoppingCart',
+        features: ['Scheduled Messages', 'Discount Codes', 'Conversion Tracking'],
+    },
+    {
+        id: 'wf_003',
+        title: 'Courier Assignment',
+        description: 'Auto-assign orders to the nearest available rider based on location.',
+        price: 79,
+        category: 'Logistics',
+        icon: 'MapPin',
+        features: ['Location Matching', 'Rider Notification', 'Status Updates'],
+    },
+    {
+        id: 'wf_004',
+        title: 'Refund Request Handler',
+        description: 'Streamline refund requests with an automated approval flow.',
+        price: 39,
+        category: 'Support',
+        icon: 'RefreshCcw',
+        features: ['Form Collection', 'Admin Approval', 'Customer Notification'],
+    },
+    {
+        id: 'wf_005',
+        title: 'Customer Feedback Loop',
+        description: 'Automatically ask for reviews after order delivery.',
+        price: 19,
+        category: 'Marketing',
+        icon: 'Star',
+        features: ['Post-delivery Trigger', 'Rating Collection', 'Alert on Low Rating'],
+    }
+];

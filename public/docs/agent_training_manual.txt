@@ -1,0 +1,53 @@
+KHATTAK HUB AUTOMATION - AGENT TRAINING MANUAL (SAMPLE)
+======================================================
+
+SECTION 1: THE HYBRID MODEL
+---------------------------
+Our philosophy is simple: Robots do the boring work, Humans do the important work.
+
+- The Bot (n8n + WhatsApp) handles:
+  - Initial greeting
+  - Order collection (Item, Quantity, Address)
+  - Order status checks
+  - FAQs (Delivery charges, timings)
+
+- The Human Agent handles:
+  - Complex questions not in the menu
+  - Angry customers / Complaints
+  - Address verification for confusing locations
+  - Payment issues
+
+SECTION 2: ESCALATION PROTOCOL
+------------------------------
+When does the bot hand over to a human?
+
+1. Keyword Trigger: If customer says "Human", "Agent", "Help", or "Masla" (Issue).
+2. Failure Trigger: If the bot fails to understand the user 3 times in a row.
+3. Sentiment Trigger: If the customer uses abusive language or negative sentiment words.
+
+ACTION:
+- The bot will send a message: "Connecting you to a support agent..."
+- A notification is sent to the Admin Dashboard / Slack / WhatsApp Group.
+- YOU (The Agent) must reply within 5 minutes.
+
+SECTION 3: SAMPLE SCRIPTS (URDU/ENGLISH)
+----------------------------------------
+
+Scenario A: Late Delivery
+Customer: "Where is my order? It's been 2 hours!"
+Agent: "Assalam-o-Alaikum! Maazrat khwah hain takheer ke liye. Main abhi rider ki location check kar ke aap ko batata hoon. Bara-e-meharbani 2 minute dein."
+(English: "Peace be upon you! Apologies for the delay. I am checking the rider's location right now. Please give me 2 minutes.")
+
+Scenario B: Wrong Item Received
+Customer: "I ordered Chicken Tikka but got Fajita."
+Agent: "Hum is ghalti par sharminda hain. Kya aap ghalat item ki tasveer bhej sakte hain? Hum foran replacement rider bhej rahe hain."
+(English: "We are embarrassed by this mistake. Can you send a picture of the wrong item? We are sending a replacement rider immediately.")
+
+SECTION 4: TOOLS
+----------------
+- n8n Dashboard: Use this to see the flow of the conversation.
+- Google Sheets: Check the 'Orders' tab for status.
+- WhatsApp Web: Your primary communication tool.
+
+------------------------------------------------------
+End of Sample. Full certification course available in the Enterprise Package.

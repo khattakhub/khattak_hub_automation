@@ -1,0 +1,75 @@
+{
+    "name": "Abandoned Cart Recovery",
+    "nodes": [
+        {
+            "parameters": {
+                "triggerTimes": {
+                    "item": [
+                        {
+                            "mode": "everyHour"
+                        }
+                    ]
+                }
+            },
+            "name": "Cron",
+            "type": "n8n-nodes-base.cron",
+            "typeVersion": 1,
+            "position": [
+                100,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "operation": "lookup",
+                "sheetId": "12345abcde",
+                "lookupColumn": "status",
+                "lookupValue": "abandoned"
+            },
+            "name": "Find Abandoned",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 1,
+            "position": [
+                300,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "phoneNumber": "={{$node[\"Find Abandoned\"].json[\"phone\"]}}",
+                "text": "Hey! You left something in your cart. Use code SAVE10 for 10% off!"
+            },
+            "name": "Send Reminder",
+            "type": "n8n-nodes-base.whatsapp",
+            "typeVersion": 1,
+            "position": [
+                500,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Cron": {
+            "main": [
+                [
+                    {
+                        "node": "Find Abandoned",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Find Abandoned": {
+            "main": [
+                [
+                    {
+                        "node": "Send Reminder",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}
