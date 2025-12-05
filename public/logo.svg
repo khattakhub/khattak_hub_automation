@@ -1,0 +1,86 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main Teal Gradient for the K -->
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" /> <!-- Cyan 400 -->
+      <stop offset="50%" stop-color="#06B6D4" /> <!-- Cyan 500 -->
+      <stop offset="100%" stop-color="#0E7490" /> <!-- Cyan 700 -->
+    </linearGradient>
+    
+    <!-- Dark Metal Gradient for the Ring -->
+    <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" /> <!-- Slate 600 -->
+      <stop offset="50%" stop-color="#1E293B" /> <!-- Slate 800 -->
+      <stop offset="100%" stop-color="#020617" /> <!-- Slate 950 -->
+    </linearGradient>
+
+    <!-- Inner Highlight for the Ring -->
+    <linearGradient id="ringHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0F766E" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- 3D Drop Shadow -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feOffset in="blur" dx="2" dy="4" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.5"/>
+      <feComposite in2="offsetBlur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Inner Glow/Bevel -->
+    <filter id="innerBevel" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="1" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k2="1" k3="1"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Ring (C Shape) -->
+  <!-- Main Body -->
+  <path
+    d="M 85 30 A 42 42 0 1 0 85 70"
+    stroke="url(#metalGradient)"
+    stroke-width="8"
+    stroke-linecap="round"
+    filter="url(#dropShadow)"
+  />
+  
+  <!-- Inner Cyan Highlight on Ring -->
+  <path
+    d="M 85 30 A 42 42 0 1 0 85 70"
+    stroke="url(#ringHighlight)"
+    stroke-width="2"
+    stroke-linecap="round"
+    fill="none"
+    transform="scale(0.92) translate(4, 4)"
+    opacity="0.9"
+  />
+
+  <!-- The K Shape -->
+  <g transform="translate(25, 20) scale(0.6)" filter="url(#dropShadow)">
+    <!-- Vertical Stem with Gear Teeth -->
+    <path
+      d="M 20 0 L 40 0 L 40 100 L 20 100 L 20 85 L 5 85 L 5 70 L 20 70 L 20 55 L 5 55 L 5 40 L 20 40 L 20 25 L 5 25 L 5 10 L 20 10 Z"
+      fill="url(#tealGradient)"
+    />
+    
+    <!-- Upper Arm -->
+    <path
+      d="M 40 55 L 80 15 L 100 15 L 55 60 Z"
+      fill="url(#tealGradient)"
+    />
+    
+    <!-- Lower Arm -->
+    <path
+      d="M 55 40 L 100 85 L 80 85 L 40 45 Z"
+      fill="url(#tealGradient)"
+    />
+    
+    <!-- Connection Detail (Center of K) -->
+    <circle cx="40" cy="50" r="5" fill="#06B6D4" />
+  </g>
+</svg>

@@ -12,6 +12,7 @@ import Workflows from './pages/Workflows';
 import Academy from './pages/Academy';
 import Demo from './pages/Demo';
 import Pricing from './pages/Pricing';
+import Policies from './pages/Policies';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/academy" element={<Academy />} />
               <Route path="/demo" element={<Demo />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/policies" element={<Policies />} />
             </Routes>
           </main>
           <Footer />

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
 
+import Logo from './Logo';
+
 const Header = () => {
     const { language, toggleLanguage, t } = useLanguage();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,17 +29,7 @@ const Header = () => {
             <div className="container flex items-center justify-between" style={{ height: '4rem' }}>
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 font-en-only">
-                    <div style={{
-                        width: '32px',
-                        height: '32px',
-                        backgroundColor: 'var(--primary)',
-                        borderRadius: '8px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'white',
-                        fontWeight: 'bold'
-                    }}>K</div>
+                    <Logo className="brand-logo" style={{ width: '40px', height: '40px' }} />
                     <span style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--primary-dark)' }}>
                         KhattakHub
                     </span>

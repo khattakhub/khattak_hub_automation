@@ -1,13 +1,159 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>khattak_hub_automation</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KhattakHub Automation</title>
+  <style>
+    /* Initial Loader Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F8FAFC;
+    }
+
+    #initial-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #F8FAFC;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader-content {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader-logo {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+    }
+
+    /* Shine Animation */
+    .shine-rect {
+      fill: url(#shine);
+      animation: shineMove 2s infinite ease-in-out;
+    }
+
+    @keyframes shineMove {
+      0% {
+        transform: translateX(-150%) skewX(-20deg);
+      }
+
+      50% {
+        transform: translateX(150%) skewX(-20deg);
+      }
+
+      100% {
+        transform: translateX(150%) skewX(-20deg);
+      }
+    }
+
+    /* Pulse Animation for the whole logo */
+    .loader-content {
+      animation: pulseLogo 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseLogo {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- Initial Loader (will be replaced by React) -->
+    <div id="initial-loader">
+      <div class="loader-content">
+        <!-- Inline SVG Logo for Loader -->
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="loader-logo">
+          <defs>
+            <linearGradient id="loaderTealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#22D3EE" />
+              <stop offset="50%" stop-color="#06B6D4" />
+              <stop offset="100%" stop-color="#0E7490" />
+            </linearGradient>
+            <linearGradient id="loaderMetalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#475569" />
+              <stop offset="50%" stop-color="#1E293B" />
+              <stop offset="100%" stop-color="#020617" />
+            </linearGradient>
+            <linearGradient id="loaderRingHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#0F766E" stop-opacity="0" />
+            </linearGradient>
+            <filter id="loaderDropShadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+              <feOffset in="blur" dx="2" dy="4" result="offsetBlur" />
+              <feFlood flood-color="#000000" flood-opacity="0.5" />
+              <feComposite in2="offsetBlur" operator="in" />
+              <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="white" stop-opacity="0" />
+              <stop offset="50%" stop-color="white" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="white" stop-opacity="0" />
+            </linearGradient>
+
+            <mask id="shineMask">
+              <g transform="translate(25, 20) scale(0.6)">
+                <path
+                  d="M 20 0 L 40 0 L 40 100 L 20 100 L 20 85 L 5 85 L 5 70 L 20 70 L 20 55 L 5 55 L 5 40 L 20 40 L 20 25 L 5 25 L 5 10 L 20 10 Z"
+                  fill="white" />
+                <path d="M 40 55 L 80 15 L 100 15 L 55 60 Z" fill="white" />
+                <path d="M 55 40 L 100 85 L 80 85 L 40 45 Z" fill="white" />
+              </g>
+              <path d="M 85 30 A 42 42 0 1 0 85 70" stroke="white" stroke-width="8" fill="none" />
+            </mask>
+          </defs>
+
+          <!-- Logo Group -->
+          <g id="mainLogo">
+            <path d="M 85 30 A 42 42 0 1 0 85 70" stroke="url(#loaderMetalGradient)" stroke-width="8"
+              stroke-linecap="round" filter="url(#loaderDropShadow)" />
+            <path d="M 85 30 A 42 42 0 1 0 85 70" stroke="url(#loaderRingHighlight)" stroke-width="2"
+              stroke-linecap="round" fill="none" transform="scale(0.92) translate(4, 4)" opacity="0.9" />
+            <g transform="translate(25, 20) scale(0.6)" filter="url(#loaderDropShadow)">
+              <path
+                d="M 20 0 L 40 0 L 40 100 L 20 100 L 20 85 L 5 85 L 5 70 L 20 70 L 20 55 L 5 55 L 5 40 L 20 40 L 20 25 L 5 25 L 5 10 L 20 10 Z"
+                fill="url(#loaderTealGradient)" />
+              <path d="M 40 55 L 80 15 L 100 15 L 55 60 Z" fill="url(#loaderTealGradient)" />
+              <path d="M 55 40 L 100 85 L 80 85 L 40 45 Z" fill="url(#loaderTealGradient)" />
+              <circle cx="40" cy="50" r="5" fill="#06B6D4" />
+            </g>
+          </g>
+
+          <!-- Shine Effect Overlay -->
+          <rect x="-50" y="-50" width="200" height="200" fill="url(#shine)" mask="url(#shineMask)" class="shine-rect" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
